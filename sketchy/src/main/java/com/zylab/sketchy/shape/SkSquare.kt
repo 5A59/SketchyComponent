@@ -55,6 +55,9 @@ open class SkSquare(var startPoint: SkPoint = DEFAULT_POINT, var width: Double =
         fillShape(canvas)
         lines.forEach {
             it.brushWidth = brushWidth
+            it.color = color
+            it.fillColor = fillColor
+            it.bgColor = bgColor
             it.draw(canvas)
         }
     }

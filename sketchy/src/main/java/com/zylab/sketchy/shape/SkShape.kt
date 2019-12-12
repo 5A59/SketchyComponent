@@ -1,8 +1,6 @@
 package com.zylab.sketchy.shape
 
-import android.graphics.Canvas
-import android.graphics.Paint
-import android.graphics.Path
+import android.graphics.*
 import com.zylab.sketchy.model.DEFAULT_POINT
 import com.zylab.sketchy.model.SkBezier
 import com.zylab.sketchy.model.SkPoint
@@ -16,6 +14,7 @@ abstract class SkShape {
     protected val paint = Paint()
     protected val fillPaint = Paint()
     protected val bgPaint = Paint()
+    protected val clearPaint = Paint()
 
     var bgColor: Int = 0
     var color: Int = 0
@@ -23,8 +22,12 @@ abstract class SkShape {
 
     protected var bezierList: MutableList<SkBezier> = ArrayList()
 
-    var brushWidth: Double = 15.0
+    var brushWidth: Double = 11.0
     protected var step = 50.0
+
+    init {
+        clearPaint.xfermode = PorterDuffXfermode(PorterDuff.Mode.CLEAR)
+    }
 
     fun getShapeWidth(): Double {
         return brushWidth
@@ -55,6 +58,7 @@ abstract class SkShape {
             paint.color = color
         }
         if (bezierList.isNotEmpty()) {
+            path.rewind()
             bezierList.forEach {
                 path.moveTo(it.startPoint.x.toFloat(), it.startPoint.y.toFloat())
                 path.quadTo(
@@ -63,8 +67,8 @@ abstract class SkShape {
                     it.endPoint.x.toFloat(),
                     it.endPoint.y.toFloat()
                 )
-                canvas.drawPath(path, paint)
             }
+            canvas.drawPath(path, paint)
         }
     }
 

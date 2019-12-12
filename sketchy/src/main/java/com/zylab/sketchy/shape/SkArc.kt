@@ -19,9 +19,15 @@ class SkArc(
     var sweepAngle: Double = 0.0,
     var linkCenter: Boolean = true
 ) : SkShape() {
-    private val angleStep = 10
+    private val angleStep = 13
+    init {
+        brushWidth = 10.0
+    }
 
     override fun parse(bezierList: MutableList<SkBezier>) {
+        if (!isValidPoint(center) || radius <= 0) {
+            return
+        }
         var startX: Double
         var startY: Double
 
@@ -68,7 +74,7 @@ class SkArc(
             controlY = Random.nextDouble(
                 min(nextY, (startY + nextY) / 2),
                 max(nextY, (startY + nextY) / 2)
-            ) + brushWidth
+            ) - brushWidth
             controlPoint = SkPoint(controlX, controlY)
             bezierList.add(SkBezier(startPoint, controlPoint, endPoint))
 

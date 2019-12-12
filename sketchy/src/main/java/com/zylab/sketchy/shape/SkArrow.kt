@@ -106,7 +106,7 @@ class SkArrow(var startPoint: SkPoint = DEFAULT_POINT, var width: Double = 0.0, 
                 )
                 line.draw(canvas)
                 line.reset(arrowPoint,
-                    SkPoint(arrowPoint.x - width / 2, arrowPoint.y + height / 2)
+                    SkPoint(arrowPoint.x + width / 2, arrowPoint.y - height / 2)
                 )
                 line.draw(canvas)
             }
