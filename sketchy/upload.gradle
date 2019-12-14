@@ -36,7 +36,7 @@ task javadoc(type: Javadoc) {
     options.charSet 'UTF-8'
     options.author true
     options.version true
-    options.links "https://github.com/5a59/MockNet/tree/master/mylibrary/docs/javadoc"
+//    options.links "https://github.com/5a59/MockNet/tree/master/mylibrary/docs/javadoc"
     failOnError false
 }
 

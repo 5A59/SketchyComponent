@@ -2,7 +2,6 @@ package com.zylab.sketchy.drawable
 
 import android.graphics.*
 import android.graphics.drawable.Drawable
-import android.util.Log
 import com.zylab.sketchy.model.DEFAULT_POINT
 import com.zylab.sketchy.model.SkPoint
 import com.zylab.sketchy.shape.SkShape
@@ -16,8 +15,8 @@ abstract class SkDrawable(var width: Double = 0.0, var height: Double = 0.0) : D
     private var bufferCanvas = Canvas()
     private var paint = Paint()
 
-    var backgroundColor: Int = 0
-    var lineColor: Int = 0
+    var bgColor: Int = 0
+    var borderColor: Int = 0
     var fillColor: Int = 0
     var brushWidth: Double = 11.0
         set(value) {
@@ -28,8 +27,8 @@ abstract class SkDrawable(var width: Double = 0.0, var height: Double = 0.0) : D
     private var hasParsed = false
 
     open fun parse() {
-        shape?.bgColor = backgroundColor
-        shape?.color = lineColor
+        shape?.bgColor = bgColor
+        shape?.borderColor = borderColor
         shape?.fillColor = fillColor
     }
 

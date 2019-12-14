@@ -17,7 +17,7 @@ abstract class SkShape {
     protected val clearPaint = Paint()
 
     var bgColor: Int = 0
-    var color: Int = 0
+    var borderColor: Int = 0
     var fillColor: Int = 0
 
     protected var bezierList: MutableList<SkBezier> = ArrayList()
@@ -54,8 +54,8 @@ abstract class SkShape {
         }
         drawBackground(canvas)
         fillShape(canvas)
-        if (color != 0) {
-            paint.color = color
+        if (borderColor != 0) {
+            paint.color = borderColor
         }
         if (bezierList.isNotEmpty()) {
             path.rewind()

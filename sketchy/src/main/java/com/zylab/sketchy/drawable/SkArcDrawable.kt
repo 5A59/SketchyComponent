@@ -16,6 +16,7 @@ class SkArcDrawable(
     var sweepAngle: Double = 0.0
     var center: SkPoint = DEFAULT_POINT
     var radius: Double = 0.0
+    var linkCenter: Boolean = true
 
     init {
         shape = SkArc()
@@ -36,7 +37,7 @@ class SkArcDrawable(
             }
             it.startAngle = startAngle
             it.sweepAngle = sweepAngle
-            it.linkCenter = true
+            it.linkCenter = linkCenter
         }
     }
 

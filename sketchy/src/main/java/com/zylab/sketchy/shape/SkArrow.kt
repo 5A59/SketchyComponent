@@ -39,8 +39,8 @@ class SkArrow(var startPoint: SkPoint = DEFAULT_POINT, var width: Double = 0.0, 
         }
         drawBackground(canvas)
 
-        if (color != 0) {
-            paint.color = color
+        if (borderColor != 0) {
+            paint.color = borderColor
         }
         val line = SkLine()
         line.brushWidth = brushWidth

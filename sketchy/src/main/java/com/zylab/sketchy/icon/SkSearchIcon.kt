@@ -13,20 +13,20 @@ import kotlin.math.min
  */
 
 class SkSearchIcon : SkDrawable() {
-    var circle = SkCircle()
-    var line = SkLine()
+    private var circle = SkCircle()
+    private var line = SkLine()
 
     override fun parse() {
-        circle.bgColor = backgroundColor
-        circle.color = lineColor
+        circle.bgColor = bgColor
+        circle.borderColor = borderColor
         circle.fillColor = if (fillColor == 0) Color.parseColor("#FFFFFF") else fillColor
 
         circle.center = SkPoint(width / 2, height / 2)
         circle.radius = (min(width / 2, height / 2) - circle.getShapeWidth()) * 3 / 4
         circle.parse()
 
-        line.bgColor = backgroundColor
-        line.color = lineColor
+        line.bgColor = bgColor
+        line.borderColor = borderColor
         line.fillColor = fillColor
 
         line.reset(SkPoint(width / 2, height / 2), SkPoint(width, height))

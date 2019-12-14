@@ -12,21 +12,21 @@ import kotlin.math.min
  */
 
 class SkTimeIcon : SkDrawable() {
-    var circle = SkCircle()
-    var line1 = SkLine()
-    var line2 = SkLine()
+    private var circle = SkCircle()
+    private var line1 = SkLine()
+    private var line2 = SkLine()
 
     override fun parse() {
-        circle.bgColor = backgroundColor
-        circle.color = lineColor
+        circle.bgColor = bgColor
+        circle.borderColor = borderColor
         circle.fillColor = fillColor
 
-        line1.bgColor = backgroundColor
-        line1.color = lineColor
+        line1.bgColor = bgColor
+        line1.borderColor = borderColor
         line1.fillColor = fillColor
 
-        line2.bgColor = backgroundColor
-        line2.color = lineColor
+        line2.bgColor = bgColor
+        line2.borderColor = borderColor
         line2.fillColor = fillColor
 
         circle.center = SkPoint(width / 2, height / 2)

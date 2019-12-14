@@ -11,13 +11,13 @@ import com.zylab.sketchy.shape.SkShape
  */
 
 class SkListIcon : SkDrawable() {
-    var line = SkLine()
-    var line1 = SkLine()
-    var line2 = SkLine()
+    private var line = SkLine()
+    private var line1 = SkLine()
+    private var line2 = SkLine()
 
     private fun setColor(shape: SkShape) {
-        shape.bgColor = backgroundColor
-        shape.color = lineColor
+        shape.bgColor = bgColor
+        shape.borderColor = borderColor
         shape.fillColor = fillColor
     }
 
