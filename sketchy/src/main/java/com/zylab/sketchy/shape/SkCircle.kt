@@ -20,11 +20,12 @@ open class SkCircle(var center: SkPoint = DEFAULT_POINT, var radius: Double = 0.
     var arc = SkArc()
 
     init {
-        step = 15.0
+        step = 10.0
     }
 
     override fun parse(bezierList: MutableList<SkBezier>) {
         if (isValidPoint(center) && radius > 0) {
+            arc.step = step
             arc.center = center
             arc.radius = radius
             arc.startAngle = 0.0

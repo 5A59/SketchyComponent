@@ -1,5 +1,6 @@
 package com.zylab.sketchycomponent
 
+import android.graphics.Canvas
 import android.os.Bundle
 import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +10,8 @@ import com.zylab.sketchy.drawable.SkImgDrawable
 import com.zylab.sketchy.drawable.SkSquareDrawable
 import com.zylab.sketchy.icon.SkArrowIcon
 import com.zylab.sketchy.icon.SkListIcon
+import com.zylab.sketchy.model.SkPoint
+import com.zylab.sketchy.shape.SkLine
 import kotlinx.android.synthetic.main.activity_demo.*
 
 /**
@@ -53,5 +56,13 @@ class DemoActivity : BaseActivity() {
         })
 
         icon.setImageDrawable(SkListIcon())
+    }
+
+    private fun test() {
+        val canvas = Canvas()
+        val line = SkLine()
+        line.startPoint = SkPoint(0.0, 0.0)
+        line.endPoint = SkPoint(100.0, 100.0)
+        line.draw(canvas)
     }
 }

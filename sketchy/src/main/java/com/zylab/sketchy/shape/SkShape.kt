@@ -23,7 +23,7 @@ abstract class SkShape {
     protected var bezierList: MutableList<SkBezier> = ArrayList()
 
     var brushWidth: Double = 11.0
-    protected var step = 50.0
+    var step = 50.0
 
     init {
         clearPaint.xfermode = PorterDuffXfermode(PorterDuff.Mode.CLEAR)
@@ -34,6 +34,7 @@ abstract class SkShape {
     }
 
     fun parse() {
+        bezierList.clear()
         parse(bezierList)
     }
 

@@ -12,7 +12,7 @@ import kotlin.random.Random
  * Created by zhangyi on 19-11-19
  */
 
-class SkLine(private var startPoint: SkPoint = DEFAULT_POINT, private var endPoint: SkPoint = DEFAULT_POINT) : SkShape() {
+class SkLine(var startPoint: SkPoint = DEFAULT_POINT, var endPoint: SkPoint = DEFAULT_POINT) : SkShape() {
     fun reset(startPoint: SkPoint, endPoint: SkPoint) {
         this.startPoint = startPoint
         this.endPoint = endPoint
