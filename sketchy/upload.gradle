@@ -4,7 +4,6 @@
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
-//上传到jcenter
 Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
 
@@ -19,7 +18,7 @@ group = properties.getProperty("group")
 def libName = properties.getProperty("name")
 // 版本号，下次更新是只需要更改版本号即可
 version = properties.getProperty("version")
-/** compile 'com.zylab:SketchyComponent:1.0.0' **/
+
 archivesBaseName = properties.getProperty("name")
 
 //生成源文件
@@ -36,7 +35,6 @@ task javadoc(type: Javadoc) {
     options.charSet 'UTF-8'
     options.author true
     options.version true
-//    options.links "https://github.com/5a59/MockNet/tree/master/mylibrary/docs/javadoc"
     failOnError false
 }
 
