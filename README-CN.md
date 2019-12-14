@@ -24,7 +24,7 @@ repositories {
 ```
 2. 添加 sketchy 依赖
 ```
-implementation 'com.zylab:sketchy:0.1.1'
+implementation 'com.zylab:sketchy:0.1.3'
 ```
 
 #### 基本使用
@@ -41,9 +41,9 @@ text.background = skSquareDrawable
 
 ### 版本更新
 #### 最新版本
-0.1.1
+0.1.3
 
-#### 0.1.1
+#### 0.1.3
 完成基本功能
 
 ### 组件介绍

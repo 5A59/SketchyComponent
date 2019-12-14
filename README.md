@@ -23,7 +23,7 @@ repositories {
 ```
 2. add `sketchy` to dependencies
 ```
-implementation 'com.zylab:sketchy:0.1.1'
+implementation 'com.zylab:sketchy:0.1.3'
 ```
 
 #### How to use
@@ -39,9 +39,9 @@ text.background = skSquareDrawable
 
 ### Update
 #### Latest version
-0.1.1
+0.1.3
 
-#### 0.1.1 
+#### 0.1.3
 Complete basic functions.
 
 ### Introduce
