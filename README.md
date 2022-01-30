@@ -1,5 +1,5 @@
 ## SketchyComponent
-Languate: [中文](./README-CN.md) | [English](./README.md)   
+Language: [中文](./README-CN.md) | [English](./README.md)   
 
 ![logo](./pics/SketchyComponent.png)
 
